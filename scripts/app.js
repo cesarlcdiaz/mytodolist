@@ -1,30 +1,25 @@
 angular.module("todoListApp", [])
 
 .controller('mainCtrl', function($scope, dataService) {
-  $scope.helloConsole = dataService.helloConsole;
-
   $scope.learningNgChange = function() {
-
     console.log("hello world message");
-    
   };
 
-  $scope.todos = [
+  $scope.helloWorld = dataService.helloWorld;
 
-  {"name": "clean the house"},
-  {"name": "pay the bills"},
-  {"name": "feed the dog"},
-  {"name": "water the plants"},
-  {"name": "change the lights"},
-  {"name": "work on projects"},
-  {"name": "get Money!"}
+dataService.getTodos(function(response) {
+  console.log(response.data);
+  $scope.todos = response.data;
+});
 
-  ]
 })
-.service('dataService', function() {
+.service('dataService', function($http) {
+  this.helloWorld = function() {
+    console.log("hello console testing");
+  };
 
-  this.helloConsole = function() {
-    console.log("hello console testing")
-  }
-
+  this.getTodos = function(callback){ 
+    $http.get('mock/todos.json')
+  .then(callback)
+ }
 });
