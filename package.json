@@ -1,0 +1,19 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "An interactive application, that allows the user list a tast, edit and delete a task as well as to save, re-edit completed task and resave task.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesarlcdiaz/todolist.git"
+  },
+  "author": "Cesar Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cesarlcdiaz/todolist/issues"
+  },
+  "homepage": "https://github.com/cesarlcdiaz/todolist#readme"
+}
