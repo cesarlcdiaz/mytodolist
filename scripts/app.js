@@ -12,8 +12,9 @@ dataService.getTodos(function(response) {
   $scope.todos = response.data;
 });
 
-$scope.deletedTodo = function(todo) {
+$scope.deletedTodo = function(todo, $index) {
   dataService.deletedTodo(todo);
+  $scope.todo.splice($index, 1);
 };
 })
 .service('dataService', function($http) {
