@@ -12,6 +12,9 @@ dataService.getTodos(function(response) {
   $scope.todos = response.data;
 });
 
+$scope.deletedTodo = function(todo) {
+  dataService.deletedTodo(todo);
+};
 })
 .service('dataService', function($http) {
   this.helloWorld = function() {
@@ -21,5 +24,13 @@ dataService.getTodos(function(response) {
   this.getTodos = function(callback){ 
     $http.get('mock/todos.json')
   .then(callback)
+ }
+
+this.deleteTodo = function(todo) {
+  console.log("the " + todo.name + " todo has been deleted!")
+}
+
+ this.saveTodo = function(todo) {
+  console.log("the " + todo.name + " todo has been saved!");
  }
 });
