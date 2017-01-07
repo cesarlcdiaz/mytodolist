@@ -1,4 +1,4 @@
-http://mytoodos.tk
+https://cesarlcdiaz.github.io/mytodolist/
 
 
 My First AngularJS project, I'm so happy to be teaching my self AngularJs, is an interesting technology. 
